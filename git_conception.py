@@ -291,6 +291,29 @@ git 使用
                     ****第一次-u会对分支进行关联，以后每次更新只需要用git push 命令同步即可
 
                     标签上传：
+                        git push origin v1.0（上传指定标签）
+                        git push origin --tags(上传全部标签)
+                5. 删除远程分支
+                    git branch -a 查看所有分支
+                    git push origin [:branch] 删除远程分支或者使用：git push origin --delete branch
+
+                6.其他推送方法
+                    git push --force origin 用于本地版本比远程版本旧时强行推送本地版本
+                    git push origin [tag] 推送本地标签到远程
+                    git push origin --tags 推送本地所有标签到远程
+                    git push origin --delete tag[tagname] 删除远程仓库标签
+                        git push origin --delete tag v1.0
+                    git reset --hard HEAD^:(退回到上一个版本)
+
+                7.从远程获取代码
+                    git pull
+                        将远程分支master拉取到本地，作为tmp分支
+                            git fetch origin master:tmp
+                    ****区别：
+                        pull 将远程内容直接拉取到本地，并和对应分支内容进行合并
+                        fetch将远程内容拉取到本地，但是不会和本地对应分支合并，可以根据自己判断后再使用merge合并
+
+
 
 
 
